@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+html {
+  transition: background-color 0.1s ease, color 0.1s ease;
+  background-color: #ffffff; /* Light mode background */
+  color: #171717; /* Light mode text color */
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Dark mode styles */
+html.dark {
+  transition: background-color 0.1s ease, color 0.1s ease;
+  background-color: #0e2130; /* Dark background */
+  color: #ffffff; /* Dark mode text color */
+}
+
+/* Card flip animation styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Add smooth transition for card flip */
+.transition-transform {
+  transition: transform 1s ease;
+}
+
+/* Ensure the cards maintain their appearance during flip */
+.group:hover .group-hover\:rotate-y-180 {
+  transform: rotateY(180deg);
+}
