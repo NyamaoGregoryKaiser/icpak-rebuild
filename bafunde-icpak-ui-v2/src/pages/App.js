@@ -1,23 +1,13 @@
 import React from 'react';
-import { useTheme } from './theme-context'; // Update this import to match your theme context file
+import ReactDOM from 'react-dom';
+import '../styles/global.css';
 
-function App() {
-  const { theme, toggleTheme } = useTheme();
+import { ThemeProvider } from './theme-context'; // Import the ThemeProvider
+import App from './App';
 
-  return (
-    <div className={`app ${theme}`}>
-      <header>
-        <h1>My Next.js Application</h1>
-        <button onClick={toggleTheme}>
-          Switch to {theme === 'light' ? 'dark' : 'light'} mode
-        </button>
-      </header>
-      <main>
-        {/* Your app content goes here */}
-        <p>Welcome to my application!</p>
-      </main>
-    </div>
-  );
-}
-
-export default App;
+ReactDOM.render(
+  <ThemeProvider>
+    <App />
+  </ThemeProvider>,
+  document.getElementById('root')
+);
