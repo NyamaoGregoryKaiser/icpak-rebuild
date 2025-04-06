@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../styles/global.css';
+import '../app/globals.css';
 
-import { ThemeProvider } from './theme-context'; // Import the ThemeProvider
+import { ThemeProvider } from '../components/theme-context'; // Import the ThemeProvider
 import App from './App';
 
 ReactDOM.render(
